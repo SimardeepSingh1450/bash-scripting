@@ -1,0 +1,12 @@
+total 36
+drwxr-xr-x  2 simardeepsm simardeepsm 4096 Oct 27 12:34 .
+drwx------ 32 simardeepsm simardeepsm 4096 Oct 27 11:22 ..
+-rw-r--r--  1 simardeepsm simardeepsm   50 Oct 12 00:17 .directory
+-rw-r--r--  1 simardeepsm simardeepsm    0 Oct 27 12:22 ErrorFile.txt
+-rw-r--r--  1 simardeepsm simardeepsm   40 Oct 27 01:18 file.txt
+-rwxr-xr-x  1 simardeepsm simardeepsm 3841 Oct 27 12:27 helloScript.sh
+-rw-------  1 simardeepsm simardeepsm 2481 Oct 27 12:32 .helloScript.sh.kate-swp
+-rw-r--r--  1 simardeepsm simardeepsm  542 Oct 27 12:25 OutputFile2.txt
+-rw-r--r--  1 simardeepsm simardeepsm    0 Oct 27 12:35 OutputFile3.txt
+-rw-r--r--  1 simardeepsm simardeepsm  470 Oct 27 12:22 OutputFile.txt
+-rwxr-xr-x  1 simardeepsm simardeepsm   67 Oct 27 12:34 secondScript.sh
