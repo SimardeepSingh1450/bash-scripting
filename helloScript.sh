@@ -570,11 +570,101 @@ fi
 done
 '
 
-: '22.Wait for fileSystem events with inotify:'
-: 'We use inotify to monitor files and Directories:'
+: '22.Introduction to grep :'
+: 'Grep is used to print all the lines which consist of a string you search for using grep'
+: 'grep syntax-> grep -i $grepvar $fileName'
+: 'NOTE-> -i flag is used to remove case senstivity'
+: 'NOTE-> We use -n to display line number as well in grep :'
+: 'NOTE-> -c indicates the number of times word has existed in the file'
+: 'NOTE-> -v displays all the lines except the line that conatains that word'
+
+: '
+echo "Enter the filename to search text from"
+read fileName
+
+if [[ -f $fileName ]]
+then
+    echo "Enter the text to Search"
+    read grepvar
+    grep -i -n -c $grepvar $fileName
+else
+    echo "$fileName doesnt exist"
+fi
+'
+
+: '23.Introduction to awk :'
+: 'awk scripting is different from bash scripting even the file extension of awk scripting is .awk , but we will be using awk scripting with bash scripting now :'
+
+: 'Reading content from a file using awk : '
+: 'SYntax-> awk '{print}' $fileName  '
+: '
+echo "Enter filename to print from awk"
+read fileName
+
+if [ -f $fileName ]
+then
+    awk '{print}' $fileName
+else
+    echo "$fileName doesnt exist"
+fi
+'
+: 'Printing lines containing a specific word using awk using -> awk '/word_to_search/ {print}' $fileName'
+: '
+echo "Enter the filename to print from awk :"
+read fileName
+
+if [ -f $fileName ]
+then
+    awk '/dareda/{print}' $fileName
+else
+    echo "$fileName doesnt exist"
+fi
+'
 
 
+: 'To print a word after a set of words from each line , for example -> we want to print 4th word from each line then we can use :
+awk '/word_which_is_needed_in_each_line/{print $4}' '
 
+: 'We can also print multiple words from beginning of each line using ,lets say 2nd and 3rd word :
+awk '/word_which_is_needed_in_each_line/{print $2,$3}' '
+
+
+: '24.Introduction to sed (Screen Editor) :'
+: 'Using sed to replace letters :
+cat sedfile.txt | sed 's/letter_to_replace/new_letter/'
+'
+: 'NOTE->sed s/to_replace/new_letter works only for first letter from each line'
+: 'Here s/ means substitution'
+
+: '
+echo "Enter the filename to substitute using sed"
+read fileName
+
+if [ -f $fileName ]
+then
+    cat sedfile.txt | sed 's/a/b/'
+else
+    echo "$fileName doesnt exist"
+fi
+'
+
+: 'NOTE-> To make it substitution on all letters in the file then use /g as well i.e -> sed 's/a/b/g' '
+
+: 'Another simpler syntax of writing sed is :
+    sed 's/a/b/g' $fileName
+'
+
+: 'NOTE-> We can replace Words aswell using sed , same syntax '
+
+
+: '25.Debugging BASH Scripts :'
+: 'Use->  bash -x ./BashFile.sh ,this shows all the script lines in the bashfile and tests the file in terminal '
+
+: 'Another way to do the same thing is :
+    #! /bin/bash -x
+'
+
+: 'We use [set -x] and [set +x] , when we want to debug the script lines written in between [set -x] and [set +x] '
 
 
 
